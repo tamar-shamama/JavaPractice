@@ -6,14 +6,15 @@ public class ReverseString {
 	
 	// question - reverse the order of this string
 	
-	static String phrase = "this is a meaningless sentence";
 	
 	
 	public static void main(String[] args) {
 		
-		String reversed_phrase_1 = reverse1();
-		String reversed_phrase_2 = reverse2();
-		String reversed_phrase_3 = reverse3();
+		String phrase = "this is a meaningless sentence";
+		
+		String reversed_phrase_1 = reverse1(phrase);
+		String reversed_phrase_2 = reverse2(phrase);
+		String reversed_phrase_3 = reverse3(phrase);
 		
 		System.out.println("the phrase: " + phrase);
 		System.out.println("the reverse: " + reversed_phrase_1);
@@ -26,7 +27,7 @@ public class ReverseString {
 
 	// solution #1 - char array
 	
-	private static String reverse1() {
+	private static String reverse1(String phrase) {
 		
 		char[] reverse = new char[phrase.length()];
 		
@@ -41,7 +42,7 @@ public class ReverseString {
 	
 	// solution #2 - string builder
 
-	private static String reverse2() {
+	private static String reverse2(String phrase) {
 		
 		StringBuilder stringBuilder = new StringBuilder();
 		
@@ -56,7 +57,7 @@ public class ReverseString {
 	
 	// solution #3 - string builder reverse!
 	
-	private static String reverse3() {
+	private static String reverse3(String phrase) {
 		
 		StringBuilder stringBuilder = new StringBuilder(phrase);
 		return stringBuilder.reverse().toString();

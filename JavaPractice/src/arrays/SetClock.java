@@ -5,19 +5,19 @@ import java.util.Arrays;
 public class SetClock {
 	
 	
-	// question - rotate the arrays left a number of steps, the way you set
-	//            the time in a clock.
-	
-	private static int hours[] = {1,2,3,4,5,6,7,8,9,10,11,12};
-	private static int minutes[] = new int[60];
-	
-	private static int numOfStepsOnHoure = 3;
-	private static int numOfStepsOnMinutes = 32;
-
-	
 	
 	public static void main(String[] args) {
 		
+		
+		// question - rotate the arrays left a number of steps, the way you set
+		//            the time in a clock.
+		
+		
+		int[] hours = {1,2,3,4,5,6,7,8,9,10,11,12};
+		int[] minutes = new int[60];
+		
+		int numOfStepsOnHoure = 3;
+		int numOfStepsOnMinutes = 32;
 		
 		// set array of minutes
 		for (int i = 0; i < minutes.length; i++) {
@@ -34,26 +34,26 @@ public class SetClock {
 
 		
 		// show current time on clock (first value on both arrays)
-		whatTime();
+		whatTime(hours, minutes);
 		System.out.println();
 		
 		
 		// move array of hours 3 steps
-		setHoure();
-		whatTime();
+		hours = setHoure(hours, numOfStepsOnHoure);
+		whatTime(hours, minutes);
 		System.out.println();
 		
 		
 		// move array of minutes 32 steps
-		setMinute();
-		whatTime();
+		minutes = setMinute(minutes, numOfStepsOnMinutes);
+		whatTime(hours, minutes);
 		System.out.println();
 		
 	}
 
 	
 
-	private static void whatTime() {
+	private static void whatTime(int[] hours, int[] minutes) {
 		
 		StringBuilder stringBuilder = new StringBuilder();
 		handlePreZero(hours[0], stringBuilder);
@@ -74,15 +74,13 @@ public class SetClock {
 	
 	
 
-	private static void setHoure() {
-		int[] newArr = setClock(hours, numOfStepsOnHoure);
-		hours = newArr;
+	private static int[] setHoure(int[] hours, int numOfStepsOnHoure) {
+		return setClock(hours, numOfStepsOnHoure);
 	}
 	
 	
-	private static void setMinute() {
-		int[] newArr = setClock(minutes, numOfStepsOnMinutes);
-		minutes = newArr;
+	private static int[] setMinute(int[] minutes, int numOfStepsOnMinutes) {
+		return setClock(minutes, numOfStepsOnMinutes);
 	}
 	
 	

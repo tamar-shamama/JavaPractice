@@ -8,18 +8,21 @@ import java.util.Map;
 
 public class UniqueChar {
 
-	static String phrase = "this is a sentence";
 	
 	
 	public static void main(String[] args) {
 		
-		char[] uniques = findAllUniqueChars();
+		// Question - find unique character in the array
+		
+		String phrase = "this is a sentence";
+		
+		char[] uniques = findAllUniqueChars(phrase);
 		System.out.println("uniques chars are: " + Arrays.toString(uniques));
 	}
 
 	
 	
-	private static char[] findAllUniqueChars() {
+	private static char[] findAllUniqueChars(String phrase) {
 		
 		char[] chars = phrase.toCharArray();
 		Map<Character, Integer> map = createFrequenciesMap(chars);
@@ -51,7 +54,7 @@ public class UniqueChar {
 	
 	private static char[] createUniquesArray(Map<Character, Integer> map) {
 		
-		char[] uniques = new char[phrase.length()];
+		char[] uniques = new char[map.size()];
 		int counter = 0;
 		
 		for (Map.Entry<Character, Integer> entry : map.entrySet()) {
