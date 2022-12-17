@@ -3,6 +3,7 @@ package arrays;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.stream.Stream;
 
 public class Anagrams {
 	
@@ -76,12 +77,17 @@ public class Anagrams {
 		}
 		
 		System.out.println();
+		
+		
 		 
 		
 	}
 	
 	
 	
+
+
+
 	// solution #1 - hashmap
 	// ============================================================
 
@@ -219,6 +225,8 @@ public class Anagrams {
 		}
 		return index;
 	}
+	
+	
 
 
 
