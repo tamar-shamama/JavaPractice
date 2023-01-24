@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>capitalizer</title>
+</head>
+
+
+<body>
+    <h1>capitalizer</h1>
+    <textarea name="" id="text" cols="50" rows="6"></textarea>
+    <br>
+    <br>
+    <button onclick="doCapital()">capitalize first letters</button>
+
+
+    <script>
+
+        function doCapital() {
+
+            var text = document.getElementById("text").value;
+
+            var firstLetter = text.charAt(0).toUpperCase();
+            text = firstLetter + text.substring(1, text.length);
+
+
+            for (let i = 1; i < text.length-1; i++) {
+
+                if ((text[i] === " " | text[i] === "\n") & text[i+1] != " ") {
+                    var capitalized = text[i+1].toUpperCase();
+                    const first = text.substring(0,i+1)
+                    const sec = text.substring(i+2,text.length);
+                    text = first + capitalized + sec;
+                }
+            }
+            document.getElementById("text").value = text;
+        }
+
+
+
+
+
+    </script>
+    
+</body>
+</html>

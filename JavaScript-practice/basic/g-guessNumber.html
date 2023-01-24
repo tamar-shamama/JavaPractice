@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>guess a number</title>
+</head>
+
+
+<body onload="f1()">
+
+    <h1>guess the number</h1>
+    <h2 id="num" style="filter: blur(4px);"></h2>
+    <input type="number" name="" id="guess">
+    <button onclick="f2()">go</button>
+    <h2 id="answer"></h2>
+
+    <br>
+    <button onclick="f1()">restart</button>
+
+    <script>
+
+        var guess;
+        var secret;
+
+        function f1() {
+            document.getElementById("num").style = "filter: blur(4px);"
+            document.getElementById("num").innerHTML = Math.round(Math.random()*100);
+            secret = document.getElementById("num").innerHTML;
+            document.getElementById("answer").innerHTML = "";
+            console.log(secret);
+        }
+
+        function f2() {
+            guess = document.getElementById("guess").value;
+            console.log(guess);
+            reveal();
+        }
+
+
+        function reveal() {
+
+            if (secret === guess) {
+                document.getElementById("answer").innerHTML += "<br/> you are right!!";
+                document.getElementById("num").style = "filter: none;"
+            } else {
+                document.getElementById("answer").innerHTML += "<br/> you are wrong :(";
+            }
+        }
+    </script>
+    
+</body>
+</html>

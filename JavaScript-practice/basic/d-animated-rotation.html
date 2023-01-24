@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>animated string</title>
+</head>
+<body>
+
+    <p id="sentence">this is a sentense </p>
+    <button onclick="startAndStop()">click me</button>
+
+    <script>
+
+        var active = false;
+        var intervalId;
+
+        function doAnimate() {
+
+            var element = document.getElementById("sentence");
+            var textNode = element.childNodes[0];
+            var text = textNode.data;
+            console.log(text);
+            
+            function rotate() {
+                active = true;
+                text = text[text.length - 1] + text.substring(0, text.length - 1);
+                textNode.data = text;
+            }
+            
+            intervalId = setInterval(rotate, 200);
+        }
+
+
+        function startAndStop() {
+
+            if (!active) {
+                doAnimate();
+            } else if (active) {
+               clearInterval(intervalId);
+               active = false;
+            }
+
+        }
+    </script>
+</body>
+</html>

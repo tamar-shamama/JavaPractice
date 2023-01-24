@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h1>makeshift calculator</h1>
+    
+    first number: <input type="number" id="first">
+    <br>
+    second number: <input type="number" id="sec">
+    <br>
+    <br>
+
+    <button onclick="multiply()">x</button>
+    <button onclick="divide()">:</button>
+
+    <br>
+    <h3 id="result"></h3>
+
+    <script>
+
+
+        function getUserNums() {
+
+            const firstNumAsText = document.getElementById("first").value;
+            const firstNum = parseInt(firstNumAsText);
+            
+            const secNumAsText = document.getElementById("sec").value;
+            const secNum = parseInt(secNumAsText);
+
+            return [firstNum, secNum];
+        }
+
+
+        function multiply() {
+            [firstNum, secNum] = getUserNums();
+            const result = (firstNum * secNum);
+            document.getElementById("result").innerHTML = result;
+        }
+        
+        function divide() {
+            [firstNum, secNum] = getUserNums();
+            const result = (firstNum / secNum);
+            document.getElementById("result").innerHTML = result;
+        }
+
+
+    </script>
+    
+</body>
+</html>

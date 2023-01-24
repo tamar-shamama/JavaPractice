@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>rotate array right</title>
+</head>
+
+
+<body onload="f1()">
+    <h1>rotate</h1>
+    <h4 id="arr"></h4>
+    <p id="a"></p>
+    <br>
+    number of steps to rotate: <input type="number" id="steps">
+    <button onclick="f2()">rotate</button>
+    <button onclick="f1()">reset</button>
+
+
+    <script>
+
+        let arr;
+
+        function f1() {
+            arr = [1,2,3,4,5,6,7,8,9,10,11,12];
+            document.getElementById("arr").innerHTML = arr;
+        }
+
+        
+        function f2() {
+            var elementValue = document.getElementById("steps").value;
+            var steps = parseInt(elementValue);
+            rotate(steps);
+        }
+
+        function rotate(numOfSteps) {
+            
+            let arr2 = [];
+
+            for (let i = 0; i < arr.length; i++) {
+                var val = arr[(i+numOfSteps)%(arr.length)];
+                arr2.push(val);
+            }
+
+            document.getElementById("arr").innerHTML = arr2;
+            arr = arr2;
+        }
+
+        
+
+    </script>
+    
+</body>
+</html>
